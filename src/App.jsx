@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-    
+    <GlobalStyle />
     <AllCards>
      {allpokemons? (
       <>
