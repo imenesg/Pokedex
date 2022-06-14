@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import GlobalStyle from './components/GlobalStyle';
+import "../css/font.css"
 
 import Card from './components/Card';
 
 import Loading from './components/Loading';
 
 const AllCards = styled.div`
- @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+ 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
