@@ -12,7 +12,7 @@ const AllCards = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `
-
+ 
 function App() {
   const [allpokemons, setPokemons] = useState(null)
 
