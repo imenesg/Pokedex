@@ -44,8 +44,6 @@ function App() {
      {allpokemons? (
       <>
         {allpokemons.map((pokemon, i) =>{
-          console.log(i);
-          
           return <Card key={i} pokemon={i+1}></Card> 
         })}
       </>
