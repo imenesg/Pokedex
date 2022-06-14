@@ -1,6 +1,7 @@
-// globalStyles.js
-import { createGlobalStyle } from 'styled-components';
- 
+// globalStyles.jsx tira as definições padrões de espaçamentos dos navegadores
+
+import { createGlobalStyle } from "styled-components";
+
 const GlobalStyle = createGlobalStyle`
   body {
    background-color: #00000013;
@@ -11,5 +12,5 @@ const GlobalStyle = createGlobalStyle`
      }
   }
 `;
- 
+
 export default GlobalStyle;
