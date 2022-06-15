@@ -8,7 +8,7 @@
   
   <p align="center">
     
-  <img width="550" height="" src="https://user-images.githubusercontent.com/69609443/173717204-bcf54998-4799-44f7-be5a-72c7398ab6ae.png">
+  <img width="700" height="" src="https://user-images.githubusercontent.com/69609443/173717204-bcf54998-4799-44f7-be5a-72c7398ab6ae.png">
 </p>
  
  ## O site tambem é totalmente responsivo📱.
