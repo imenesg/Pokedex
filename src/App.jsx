@@ -11,6 +11,7 @@ const AllCards = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1500px;
 `;
 
 function App() {

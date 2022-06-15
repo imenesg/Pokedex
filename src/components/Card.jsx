@@ -43,7 +43,7 @@ const colorsType = {
 };
 const PokemonCard = styled.div`
   font-family: "Rubik", sans-serif;
-  width: 100%;
+  width: 50%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -56,6 +56,11 @@ const PokemonCard = styled.div`
   margin: 0.5rem;
   z-index: 1;
   transition: all .1s ease-in-out;
+
+  @media(max-width: 600px) {
+    width: 100%;
+    max-width: 400px;
+  }
   &:hover{
     transform: scale(1.1);
     z-index: 3;
@@ -104,6 +109,8 @@ const PokemonCard = styled.div`
       }
     }
   }
+
+ 
 `;
 
 function Card(props) {
