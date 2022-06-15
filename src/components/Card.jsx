@@ -54,10 +54,22 @@ const PokemonCard = styled.div`
   position: relative;
   color: #22283d;
   margin: 0.5rem;
-
+  z-index: 1;
+  transition: all .1s ease-in-out;
+  &:hover{
+    transform: scale(1.1);
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+   span:hover, img:hover, h2:hover{
+    transform: scale(1.05);
+    z-index: 3;
+    cursor: pointer;
+  }
   img {
     background-color: #ffffff7a;
     border-radius: 50%;
+    
   }
   & > span {
     position: absolute;
