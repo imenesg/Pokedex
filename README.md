@@ -1,7 +1,7 @@
 # 🔵 Pokedex 🔵
 
 
-### 👋Olá, esse é um projeto feito por mim Usando React.js fiz um site onde podemos ver os 150 pokemons originais <br>
+### 👋Olá, esse é um projeto feito por mim Usando React.js fiz um site onde podemos ver os 151 pokemons originais <br>
 
 <P>
 
