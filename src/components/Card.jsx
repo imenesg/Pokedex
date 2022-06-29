@@ -141,7 +141,7 @@ function Card(props) {
         console.log(
           "There has been a problem with your fetch operation: " + error.message
         );
-        alert(`Something went wrong, please check the Pokemon's name :)`);
+        alert(`🔥Something went wrong, please check the Pokemon's name :)💧`);
       });
   }, []);
 
