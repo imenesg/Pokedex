@@ -55,18 +55,20 @@ const PokemonCard = styled.div`
   color: #22283d;
   margin: 0.5rem;
   z-index: 1;
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     width: 100%;
     max-width: 400px;
   }
-  &:hover{
+  &:hover {
     transform: scale(1.1);
     z-index: 3;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
-   span:hover, img:hover, h2:hover{
+  span:hover,
+  img:hover,
+  h2:hover {
     transform: scale(1.05);
     z-index: 3;
     cursor: pointer;
@@ -74,7 +76,6 @@ const PokemonCard = styled.div`
   img {
     background-color: #ffffff7a;
     border-radius: 50%;
-    
   }
   & > span {
     position: absolute;
@@ -109,8 +110,6 @@ const PokemonCard = styled.div`
       }
     }
   }
-
- 
 `;
 
 function Card(props) {
@@ -118,7 +117,15 @@ function Card(props) {
   const [characteristic, setCharacteristic] = useState(null); //caracteridtica do pokemon especifico com o id=props.pokemon
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemon}`, {
+    var pokemonNameID;
+
+    if (typeof props.pokemon === "string") {
+      //Se o input passado for uma string deixa a palavra com letras minusculas.
+      pokemonNameID = props.pokemon.toLowerCase();
+    } else {
+      pokemonNameID = props.pokemon;
+    }
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNameID}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -129,12 +136,27 @@ function Card(props) {
       })
       .then((dados) => {
         setPokemon(dados);
+      })
+      .catch(function (error) {
+        console.log(
+          "There has been a problem with your fetch operation: " + error.message
+        );
+        alert(`Something went wrong, please check the Pokemon's name :)`);
       });
   }, []);
 
   useEffect(() => {
-    if (props.pokemon <= 30) {//a api so tem a característica dos pokemons com o id de 1 a 30 :(
-      fetch(`https://pokeapi.co/api/v2/characteristic/${props.pokemon}`, {
+    var pokemonNameID;
+
+    if (typeof props.pokemon === "string") {
+      //Se o input passado for uma string deixa a palavra com letras minusculas.
+      pokemonNameID = props.pokemon.toLowerCase();
+    } else {
+      pokemonNameID = props.pokemon;
+    }
+    if (props.pokemon <= 30) {
+      //a api so tem a característica dos pokemons com o id de 1 a 30 :(
+      fetch(`https://pokeapi.co/api/v2/characteristic/${pokemonNameID}`, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -147,8 +169,8 @@ function Card(props) {
           setCharacteristic(dados.descriptions[7].description);
         });
     } else {
-      setCharacteristic("Good Friend");//seta uma característica padrão para os pokemons cm o id > que 30
-    } 
+      setCharacteristic("Good Friend"); //seta uma característica padrão para os pokemons cm o id > que 30
+    }
   }, []);
 
   return (
