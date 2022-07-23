@@ -57,6 +57,15 @@ const PokemonCard = styled.div`
   z-index: 1;
   transition: all 0.1s ease-in-out;
 
+  &>div:first-child{
+    
+    background-color: #ffffff7a;
+    border-radius: 50%;
+    width: 6.5rem;
+    height: 6.5rem;
+
+  }
+
   @media (max-width: 600px) {
     width: 100%;
     max-width: 400px;
@@ -74,8 +83,9 @@ const PokemonCard = styled.div`
     cursor: pointer;
   }
   img {
-    background-color: #ffffff7a;
-    border-radius: 50%;
+    
+    max-width: 6rem;
+    max-height: 6rem;
   }
   & > span {
     position: absolute;
@@ -182,7 +192,10 @@ function Card(props) {
               backgroundColor: colorsBg[`${pokemon.types[0].type.name}`],
             }}
           >
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+            <div>
+              <img src={pokemon[`sprites`][`versions`][`generation-v`][`black-white`][`animated`][`front_default`]} alt={pokemon.name} />
+            </div>
+            
             <span>{pokemon.id}</span>
 
             <div>
